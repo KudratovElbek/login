@@ -1,19 +1,23 @@
-<div class="container mt-5">
-    <div class="row">
-      <div class="col-sm-4">
-        <h3>Column 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+
+<div>
+    {% for car in cars %}
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="{% static car.car_image %}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{ car.car_name }}</h4>
+          <p class="card-text">{{ car.car_desc }}</p>
+          <a href="{ url }" class="btn btn-primary">ADD</a>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <h3>Column 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-4">
-        <h3>Column 3</h3>        
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-    </div>
-  </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+

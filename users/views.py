@@ -13,7 +13,7 @@ def register_view(request):
             return redirect('home')  # Redirect to your desired page
     else:
         form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, '/templates/register.html', {'form': form})
 
 # def login_request(request):
 #     if request.method == 'POST':

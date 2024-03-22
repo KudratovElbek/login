@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block title %}
-    Registration page
+    ADD Car
 {% endblock %}
 
 {% block content %}
-    <h1>New user registration page</h1>
+    <h1>Add car</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Register">
+        <button type="submit">Submit</button>
     </form>
 {% endblock %}

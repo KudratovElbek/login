@@ -14,7 +14,7 @@
  
 </head>
 <body>
-
+<div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="javascript:void(0)">Logo</a>
@@ -33,28 +33,31 @@
                 <a class="nav-link" href="javascript:void(0)">Link</a>
               </li>
             </ul>
-            {% if user.is_authenticated %}
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                    Dropdown button
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link 1</a></li>
-                    <li><a class="dropdown-item" href="#">Link 2</a></li>
-                    <li><a class="dropdown-item" href="#">Link 3</a></li>
-                    </ul>
-                </div>
-            {% else %}
-                <a href="{% url 'register_page' %}" class="btn btn-info">Register</a>
-            {% endif %}
+                {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                        Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <a href="{% url 'register_page' %}" class="btn btn-info">Register</a>
+                    <a href="{% url 'register_page' %}" class="btn btn-info">Login</a>
+                {% endif %}
               
           </div>
         </div>
       </nav>
+</div>
 
-      {% block content %}
 
-      {% endblock %}
+{% block content %}
+
+{% endblock %}
   
 
 
